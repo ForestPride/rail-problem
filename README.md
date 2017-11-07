@@ -17,7 +17,6 @@ Bob can tell the software:
 5) the transit time on an escalator if everyone stands,
 6) the transit time on an escalator if some people stand and some people walk,
 7) the number of people per tread on an escalator,
-8) the distance between people on an escalator,
 8) the number of train cars.
 
 Bob enters what he knows into the program and the program decides if it's better
