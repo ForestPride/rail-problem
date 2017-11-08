@@ -9,9 +9,8 @@ class Train:
     """
 
     def __init__(self,):
-        #self.numberofcars = numberofcars
-        #self.numberofpeopleincar = numberofpeopleincar
-        #self.boardrate = boardrate
-        #self.arrivaltime = arrivaltime
-        #self.dwelltime = dwelltime
-        #self.carcapacity = carcapacity
+        #self.cars = cars
+        #self.population = population
+        #self.board_rate = board_rate
+        #self.dwell_time = dwell_time
+        #self.car_capacity = car_capacity
