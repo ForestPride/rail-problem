@@ -3,7 +3,7 @@
 
 class Station:
     """
-    Each train station is an instance of the Train class.
+    Each train station is an instance of the Station class.
     Methods:
     __init__: creates a new stations
     total_station_pop: calculates total station population
