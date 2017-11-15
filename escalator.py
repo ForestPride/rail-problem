@@ -6,6 +6,7 @@ class Escalator:
     Each escalator is an instance of the escalator class.
     Methods:
     __init__: creates a new escalator
+    rate: calculates the rate people leave the escalator
     """
 
     def __init__(self):
