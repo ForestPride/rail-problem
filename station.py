@@ -9,7 +9,7 @@ class Station:
     total_station_pop: calculates total station population
     """
 
-    def __init__(self, capacity, escalators, train_wait, travelors_arriving, travelors_departing):
+    def __init__(self):
         self.capacity = capacity
         self.escalators = escalators
         self.train_wait = train_wait
