@@ -8,9 +8,9 @@ class Train:
     __init__: creates a new train in the station
     """
 
-    def __init__(self,):
-        #self.cars = cars
-        #self.population = population
-        #self.board_rate = board_rate
-        #self.dwell_time = dwell_time
-        #self.car_capacity = car_capacity
+    def __init__(self):
+        self.cars = cars
+        self.population = population
+        self.board_rate = board_rate
+        self.dwell_time = dwell_time
+        self.car_capacity = car_capacity
