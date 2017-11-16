@@ -1,6 +1,6 @@
 
-
-from random import *
+from StationPopWithoutTrain import *
+from StationPopWithTrain import *
 
 def sim_no_train(station, train, escalator):
     overflows = 0

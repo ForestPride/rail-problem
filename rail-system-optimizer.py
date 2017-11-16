@@ -21,26 +21,33 @@ def main():
     train_1 = train()
     escalator_1 = escalator()
     escalator_2 = escalator()
-    system_state = log(0,0,0,0)
     rail_system(station_1, train_1, escalator_1, escalator_2)
 
     failures = 0
     for i in range(runs):
         old_wait_time = station_1.train_wait
 
-        failures = failures + im_no_train(station_1, train_1, escalator_1)[0]
-        if failures > failure_threshold:
+        failures = failures + sim_no_train(station_1, train_1, escalator_1)[0]
+        if failures > failure_threshold and not HD_with_train_overfow:
             failures = 0
             station_1.train_wait = station_1.train_wait - (old_wait_time / 2)
             sans_train_overflow = True
+        elif failures > failure_threshold and HD_with_train_overfow:
+            failures = 0
+            station_1.train_wait = station_1.train_wait - (j / 2)
+
         else:
-            failures = failures + sim_with_train(station_1, train_1, escalator_1)
+            failures = failures + sim_with_train(station_1, train_1, escalator_1)[0]
             if failures > failure_threshold:
+                failures = 0
                 station_1.train_wait = 2 * station_1.train_wait
 
         if sans_train_overflow:
             time_dfference = old_wait_time - station_1.train_wait
-            for j in range(time_difference):
-                failure = sim_with_train(station_1, train_1, escalator_1)[0]
+            while j != time_difference:
+                failures = failures + sim_with_train(station_1, train_1, escalator_1)[0]
                 if failures > failure_threshold:
-                    station_1.train_wait = station_1.train_wait + j
+                    failures = 0
+                    station_1.train_wait = station_1.train_wait + 2 * j
+                    HD_with_train_overfow = True
+                j = j + 1
