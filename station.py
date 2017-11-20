@@ -10,10 +10,13 @@ class Station:
     """
 
     def __init__(self):
-        self.capacity = capacity
-        self.escalators = escalators
-        self.train_wait = train_wait
-        #self.arrivalrate = arrivalrate
-        #self.departurerate = departurerate
-        self.travelors_arriving = travelors_arriving
-        self.travelors_departing = travelors_departing
+        self.capacity = eval(input("Enter the max capacity of the station: "))
+        #testfuntion()
+        self.escalators = eval(input("Enter the number of escalators in the station: "))
+        #testfuntion()
+        self.train_wait = eval(input("Enter the wait time between trains: "))
+        #testfuntion()
+        self.travelors_arriving = eval(input("How many people just exited the train? "))
+        #testfuntion()
+        self.travelors_departing = eval(input("How many people are waiting for the train? "))
+        #testfuntion()
