@@ -10,12 +10,16 @@ class Escalator:
     """
 
     def __init__(self):
-        self.stand_time = None
-        self.stand_space = None
-        self.walk_time = None
-        self.walk_space = None
+        self.stand_time = eval(input("Enter a standing escalator transit time: "))
+        #testfunction() a function that will test if this is a positive number
+        self.stand_space = eval(input("Enter the number of stairs between standing people: "))
+        #testfuntion()
+        self.walk_time = eval(input("Enter a walking escalator transit time: "))
+        #testfuntion()
+        self.walk_space = eval(input("Enter the number of stairs between walking peopld: "))
+        #testfuntion()
 
     
     @property
     def rate(self):
-        return (self.stand_time * self.stand_space) + self.walk_time * (self.walk_space)
+        return (self.stand_time * self.stand_space) + (self.walk_time * self.walk_space)
