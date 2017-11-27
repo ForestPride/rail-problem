@@ -10,8 +10,12 @@ class Station:
     """
 
     def __init__(self):
-        self.capacity = int(eval(input("Enter the max capacity of the station: ")))
-        #testfuntion()
+        while True:
+            self.capacity = int(eval(input("Enter the max capacity of the station: ")))
+            if self.capacity == int:
+                break
+            else:
+                print("Please enter a positive integer.")
         self.escalators = int(eval(input("Enter the number of escalators in the station: ")))
         #testfuntion()
         self.train_wait = int(eval(input("Enter the wait time between trains in seconds: ")))
