@@ -12,8 +12,8 @@ class Station:
     def __init__(self):
         while True:
             self.capacity = int(eval(input("Enter the max capacity of the station: ")))
-            if self.capacity == int:
-                break
+            if type(capacity) == int:
+                print("You just set the max capacity!")
             else:
                 print("Please enter a positive integer.")
         self.escalators = int(eval(input("Enter the number of escalators in the station: ")))
