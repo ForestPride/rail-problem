@@ -34,6 +34,7 @@ def main():
             if failures >= failure_threshold:
                 station_1.train_wait = station_1.train_wait + 60
             else:
+                pass
 
     for i in range(runs):
         while station_1.train_wait != 3600:
@@ -42,3 +43,4 @@ def main():
             if failures >= failure_threshold:
                 station_2.train_wait = station_2.train_wait + 60
             else:
+                pass
