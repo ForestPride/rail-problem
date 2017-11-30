@@ -13,8 +13,8 @@ def request_integer_in_range(prompt, lowest, highest):
     """
 
     # Create an error prompt to use later, if needed
-    error_prompt = "Please enter an integer between " + str(lowest)
-    error_prompt = error_prompt + " and " + str(highest) + ": "
+    #error_prompt = "Please enter an integer between " + str(lowest)
+    #error_prompt = error_prompt + " and " + str(highest) + ": "
     # Prompt user.
     response = input(prompt)
     # Loop until an acceptable response is received.
@@ -29,12 +29,13 @@ def request_integer_in_range(prompt, lowest, highest):
             # Otherwise the catchall recovery will be executed.
         # One can use an specific exception statement to catch conversion error
         except ValueError:
-            print("Example of a int() conversion ValueError.")
+            print("ValueError: You did not enter an integer")
+            response = input("Please enter an integer between " + str(lowest) + " and " + str(highest) + ": ")
         # One can also use an else statement to catch any error not otherwise
         # specifically handled.
         else:
-            print("Example of a catchall recovery.")
-        response = input(error_prompt)
+            print("Catchall recovery: Number out of range")
+            response = input("Please enter an integer between " + str(lowest) + " and " + str(highest) + ": ")
 
     # Check the resultant integer is in the valid range
     print(response, " is acceptable.")
