@@ -42,10 +42,8 @@ def request_integer_in_range(prompt, lowest, highest):
     return response
 
 
-def main():
-    """ Test harness """
-    answer = request_integer_in_range("Enter integer between 0 and 5: ", 0, 5)
-    print("main received ", answer)
-
-
-main()
+#def main():
+    #""" Test harness """
+    #answer = request_integer_in_range("Enter integer between 0 and 5: ", 0, 5)
+    #print("main received ", answer)
+#main()
