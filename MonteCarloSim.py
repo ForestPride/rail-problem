@@ -1,6 +1,6 @@
 
-from StationPopWithoutTrain import *
-from StationPopWithTrain import *
+from StationPopWithoutTrain import before_train_station_pop
+from StationPopWithTrain import durring_train_station_pop
 
 def simulation(station, train, escalator):
     overflows = 0
