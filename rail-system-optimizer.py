@@ -17,37 +17,28 @@ failure_threshold = (eval(input("Enter acceptable system failure percentage: "))
 
 def main():
     station_1 = station()
+    # Create a new station that is the same as station_1 before runnning the simulation.
     station_2 = station_1
     train_1 = train()
+    # Create a standing only escalator.
     escalator_1 = escalator()
+    # Create a standing and walking escalator.
     escalator_2 = escalator()
-    rail_system(station_1, train_1, escalator_1, escalator_2)
+    # Populate the classes with the appropiate data.
+    create_rail_system(station_1, train_1, escalator_1, escalator_2)
 
-    failures = 0
     for i in range(runs):
-        old_wait_time = station_1.train_wait
+        while station_1.train_wait != 3600:
+            failures = simulation(train_1, station_1, escalator_1)[0]
+            print(failures)
+            if failures >= failure_threshold:
+                station_1.train_wait = station_1.train_wait + 60
+            else:
 
-        failures = failures + sim_no_train(station_1, train_1, escalator_1)[0]
-        if failures > failure_threshold and not HD_with_train_overfow:
-            failures = 0
-            station_1.train_wait = station_1.train_wait - (old_wait_time / 2)
-            sans_train_overflow = True
-        elif failures > failure_threshold and HD_with_train_overfow:
-            failures = 0
-            station_1.train_wait = station_1.train_wait - (j / 2)
-
-        else:
-            failures = failures + sim_with_train(station_1, train_1, escalator_1)[0]
-            if failures > failure_threshold:
-                failures = 0
-                station_1.train_wait = 2 * station_1.train_wait
-
-        if sans_train_overflow:
-            time_dfference = old_wait_time - station_1.train_wait
-            while j != time_difference:
-                failures = failures + sim_with_train(station_1, train_1, escalator_1)[0]
-                if failures > failure_threshold:
-                    failures = 0
-                    station_1.train_wait = station_1.train_wait + 2 * j
-                    HD_with_train_overfow = True
-                j = j + 1
+    for i in range(runs):
+        while station_1.train_wait != 3600:
+            failures = simulation(train_1, station_2, escalator_2)[0]
+            print(failures)
+            if failures >= failure_threshold:
+                station_2.train_wait = station_2.train_wait + 60
+            else:

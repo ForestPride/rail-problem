@@ -1,6 +1,6 @@
 from RailSystem import *
 
-def rail_system(station, train, escalator_standing, escalator_walking):
+def create_rail_system(station, train, escalator_standing, escalator_walking):
     #Create the station, train, and escalator objects.
 
     print()"Create an initial station.\n")
