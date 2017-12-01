@@ -18,9 +18,9 @@ def durring_train_station_pop(station, train, escalator):
     else:
         train.cars(12)
     # The number of people on the train.
-    train.pop = int(dice_roll * train.car_capacity * train.cars))
+    train.pop = int(dice_roll * train.car_capacity * train.cars)
     # Train max capacity
-    train.cap = int(train.car_capacity * train.cars))
+    train.cap = int(train.car_capacity * train.cars)
     """
     The number of people that want to get off the train.
     There is a new random number here so that the percentage of people leaving
@@ -30,7 +30,7 @@ def durring_train_station_pop(station, train, escalator):
         # People exit the train,  but first we need to calculate the train boarding,
         # and exiting rate.
         if (Station.capacity % Station_1.pop) < train.board_rate * train.cars:
-            train.board_rate = station.capacity // (station.pop * train.cars)
+train.board_rate = station.capacity // (station.pop * train.cars)
         else:
             train.board_rate = escalator.rate
 
