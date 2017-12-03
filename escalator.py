@@ -1,5 +1,5 @@
 """Creates the escalator class"""
-
+from request_integer_in_range import request_integer_in_range
 
 class Escalator:
     """
@@ -10,12 +10,12 @@ class Escalator:
     """
 
     def __init__(self):
-        self.stand_time = request_integer_in_range("Enter a standing escalator transit time in seconds between 10 and 120:", 10, 120)
-        self.stand_space = request_integer_in_range("Enter the number of stairs between standing people between 0 and 5:", 0, 5)
-        self.walk_time = request_integer_in_range("Enter a walking escalator transit time in seconds between 20 and 60:", 20, 60)
-        self.walk_space = request_integer_in_range("Enter the number of stairs between walking people between 0 and 5:", 0, 5)
+        self.standing_transit_time = request_integer_in_range("Enter the transit time when standing on the escalator in seconds between 0 and 120:", 0, 120)
+        self.people_standing = request_integer_in_range("Enter the number of people standing between 0 and 500:", 0, 500)
+        self.walking_transit_time = request_integer_in_range("Enter the transit time when walking on the escalator in seconds between 0 and 60:", 0, 60)
+        self.people_walking = request_integer_in_range("Enter the number of people walking between 0 and 500:", 0, 500)
 
 
     @property
     def rate(self):
-        return (self.stand_time * self.stand_space) + (self.walk_time * self.walk_space)
+        return (self.people_standing / self.standing_transit_time) + (self.people_walking / self.walking_transit_time)
