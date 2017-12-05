@@ -18,8 +18,8 @@ def train_boarding_station_pop(station, train, escalator):
     (station.escalators_entering * escalator.rate) < 0 and \
     train.pop + station.travelers_departing <= train.cap:
 
-        station.travelers_departing = 0
         train.pop = train.pop + station.travelers_departing
+        station.travelers_departing = 0
 
     elif station.travelers_departing - (train.cap - train.pop) + \
     (station.escalators_entering * escalator.rate) >= 0 and \
