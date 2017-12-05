@@ -27,9 +27,9 @@ class Station:
     @property
     def escalators_entering(self):
         """compute the number of escalators leaving the station."""
-        return (self.escalators // 2) + 1
+        return (self.escalators // 2)
 
     @property
     def escalators_exiting(self):
         """compute the number of escalators exiting the station."""
-        return self.escalators // 2
+        return (self.escalators // 2) + 1

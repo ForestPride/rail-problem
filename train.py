@@ -11,6 +11,7 @@ class Train:
         self.cars = None
         self.board_rate = 8
         self.pop = None
+        self.travelers_exiting = None
         self.dwell_time = None
         self.car_capacity = 125
 
