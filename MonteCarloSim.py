@@ -39,7 +39,7 @@ def simulation(station, train, escalator):
     if station.pop >= station.capacity:
         overflows = overflows + 1
         overflow_condition(station)
-        print(overflows)
+        print("the station has overflowed while there is no train", overflows, "times")
 
     """
     Calculate the station population second by second while the train is at the sation.
@@ -51,11 +51,10 @@ def simulation(station, train, escalator):
         print("the train is unloading.\ntraverlers departing =", \
         station.travelers_departing, "\ntravelers_arriving =", \
         station.travelers_arriving)
-
         print("people exiting train =", train.travelers_exiting)
         print("train population = ", train.pop, "\n")
         # Advance the clock one second.
-        dwell_time = dwell_time + 1
+        dwell_time += 1
         # Check to see if the station overflows.
         if station.pop >= (station.capacity - 1):
             overflows = overflows + 1
@@ -68,8 +67,8 @@ def simulation(station, train, escalator):
         print("the train is boarding.\ntraverlers departing = ", \
         station.travelers_departing, "\ntravelers_arriving = ", \
         station.travelers_arriving)
-
         print("train population =", train.pop, "\n")
+        dwell_time += 1
         if station.pop >= (station.capacity - 1):
             overflows = overflows + 1
             overflow_condition(station)
@@ -77,4 +76,4 @@ def simulation(station, train, escalator):
         if train.pop >= (train.cap):
             break
 
-    return overflows, dwell_time
+    return overflows, print("dwell time", (dwell_time / 60)), print("End of Test")
